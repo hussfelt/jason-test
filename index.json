@@ -47,7 +47,7 @@
             "{{#each $jason.recipes.sort(function(a,b){  return new Date(b.created_at) - new Date(a.created_at);}) }}": {
               "header": {
                 "type": "label",
-                "text": "{{title}}"
+                "text": "{{title}}",
                 "style": {
                   "background": "#429e80",
                   "font": "HelveticaNeue-CondensedBold",
