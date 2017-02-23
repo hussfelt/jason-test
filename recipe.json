@@ -36,16 +36,8 @@
                       },
                       "components": [
                         {
-                          "type": "label",
-                          "style": {
-                            "size": "18",
-                            "color": "#FFF"
-                          },
-                          "text": "{{params.title}}"
-                        },
-                        {
                           "type": "image",
-                          "url": "{{params.image}}",
+                          "url": "{{$params.image}}",
                           "style": {
                             "width": "100%",
                             "padding": "0"
