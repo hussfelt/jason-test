@@ -1,7 +1,7 @@
 {
   "$jason": {
     "head": {
-      "title": "Your recipes",
+      "title": "All your recipes",
       "description": "Sorted by title",
       "actions": {
         "$pull": {
