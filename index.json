@@ -63,12 +63,37 @@
                   },
                   "components": [
                     {
-                      "type": "image",
-                      "url": "{{image}}",
-                      "style": {
-                        "width": "100%",
-                        "padding": "0"
-                      }
+                      "type": "vertical",
+                      "components": [
+                        {
+                          "type": "horizontal",
+                          "style": {
+                            "distribution": "fill",
+                            "padding": "10",
+                            "spacing": "10"
+                          },
+                          "components": [
+                            {
+                              "type": "vertical",
+                              "style": {
+                                "distribution": "fill",
+                                "spacing": "5"
+                              },
+                              "components": [
+                                {
+                                  "type": "label",
+                                  "style": {
+                                    "size": "18",
+                                    "font": "AvenirNext-Heavy",
+                                    "color": "#cb4924"
+                                  },
+                                  "text": "{{title}}"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
