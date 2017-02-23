@@ -19,7 +19,7 @@
         "fetch": {
           "type": "$network.request",
           "options": {
-            "url": "https://raw.githubusercontent.com/hussfelt/jason-test/icons/master/data/recipes.json"
+            "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/data/recipes.json"
           },
           "success": {
             "type": "$render"
