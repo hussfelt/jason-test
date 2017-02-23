@@ -29,8 +29,8 @@
       "templates": {
         "body": {
           "style": {
-            "background": "#429e80",
-            "color": "#ffffff",
+            "background": "#ffffff",
+            "color": "#000000",
             "border": "none"
           },
           "header": {
