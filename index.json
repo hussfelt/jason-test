@@ -1,0 +1,133 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Your recipes",
+      "description": "Sorted by title",
+      "actions": {
+        "$pull": {
+          "trigger": "fetch"
+        },
+        "$foreground": {
+          "trigger": "fetch"
+        },
+        "$show": {
+          "trigger": "fetch"
+        },
+        "$load": {
+          "trigger": "fetch"
+        },
+        "fetch": {
+          "type": "$network.request",
+          "options": {
+            "url": "https://raw.githubusercontent.com/hussfelt/jason-test/icons/master/data/recipes.json"
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#429e80",
+            "color": "#ffffff",
+            "border": "none"
+          },
+          "header": {
+            "title": "Your recipes",
+            "style": {
+              "background": "#429e80",
+              "font": "HelveticaNeue-Bold",
+              "size": "14",
+              "shyt": "true",
+              "color": "#ffffff"
+            }
+          },
+          "footer": {
+            "tabs": {
+              "style": {
+                "background": "#429e80",
+                "color": "#ffffff"
+              },
+              "items": [
+                {
+                  "image": "https://raw.githubusercontent.com/hussfelt/jason-test/icons/master/home-8x.png",
+                  "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/index.json"
+                },
+                {
+                  "image": "https://raw.githubusercontent.com/hussfelt/jason-test/icons/master/heart-8x.png",
+                  "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/favourites.json"
+                }
+              ]
+            }
+          },
+          "sections": {
+            "{{#each $jason.recipes.sort(function(a,b){  return new Date(b.created_at) - new Date(a.created_at);}) }}": {
+              "items": [
+                {
+                  "type": "horizontal",
+                  "action": {
+                    "type": "$href",
+                    "options": {
+                      "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/recipe.json",
+                      "options": {
+                        "id": "{{id.toString()}}",
+                        "title": "{{title}}"
+                      }
+                    }
+                  },
+                  "style": {
+                    "background": "#ffffff"
+                  },
+                  "components": [
+                    {
+                      "type": "vertical",
+                      "components": [
+                        {
+                          "type": "horizontal",
+                          "style": {
+                            "distribution": "fill",
+                            "padding": "10",
+                            "spacing": "10"
+                          },
+                          "components": [
+                            {
+                              "type": "vertical",
+                              "style": {
+                                "distribution": "fill",
+                                "spacing": "5"
+                              },
+                              "components": [
+                                {
+                                  "type": "label",
+                                  "style": {
+                                    "size": "18",
+                                    "font": "AvenirNext-Heavy",
+                                    "color": "#cb4924"
+                                  },
+                                  "text": "{{title}}"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "image",
+                      "url": "{{image}}",
+                      "style": {
+                        "width": "100%",
+                        "padding": "0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
