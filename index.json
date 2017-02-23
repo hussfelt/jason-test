@@ -64,41 +64,26 @@
                   "components": [
                     {
                       "type": "vertical",
+                      "style": {
+                        "distribution": "fill",
+                        "spacing": "5"
+                      },
                       "components": [
                         {
-                          "type": "horizontal",
+                          "type": "label",
                           "style": {
-                            "distribution": "fill",
-                            "padding": "10",
-                            "spacing": "10"
+                            "size": "18",
+                            "color": "#FFF"
                           },
-                          "components": [
-                            {
-                              "type": "vertical",
-                              "style": {
-                                "distribution": "fill",
-                                "spacing": "5"
-                              },
-                              "components": [
-                                {
-                                  "type": "label",
-                                  "style": {
-                                    "size": "18",
-                                    "color": "#000000"
-                                  },
-                                  "text": "{{title}}"
-                                },
-                                {
-                                  "type": "image",
-                                  "url": "{{image}}",
-                                  "style": {
-                                    "width": "100%",
-                                    "padding": "0"
-                                  }
-                                }
-                              ]
-                            }
-                          ]
+                          "text": "{{title}}"
+                        },
+                        {
+                          "type": "image",
+                          "url": "{{image}}",
+                          "style": {
+                            "width": "100%",
+                            "padding": "0"
+                          }
                         }
                       ]
                     }
