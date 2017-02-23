@@ -84,10 +84,17 @@
                                   "type": "label",
                                   "style": {
                                     "size": "18",
-                                    "font": "AvenirNext-Heavy",
-                                    "color": "#cb4924"
+                                    "color": "#000000"
                                   },
                                   "text": "{{title}}"
+                                },
+                                {
+                                  "type": "image",
+                                  "url": "{{image}}",
+                                  "style": {
+                                    "width": "100%",
+                                    "padding": "0"
+                                  }
                                 }
                               ]
                             }
