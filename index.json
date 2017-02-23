@@ -47,7 +47,7 @@
             "{{#each $jason.recipes.sort(function(a,b){  return new Date(b.created_at) - new Date(a.created_at);}) }}": {
               "header": {
                 "type": "label",
-                "text": "{{title}}",
+                "text": "{{title.toUpperCase()}}",
                 "style": {
                   "background": "#429e80",
                   "font": "HelveticaNeue-CondensedBold",
@@ -71,24 +71,18 @@
                     }
                   },
                   "style": {
-                    "background": "#ffffff"
+                    "background": "#ffffff",
+                    "padding": "0"
                   },
                   "components": [
                     {
                       "type": "vertical",
                       "style": {
                         "distribution": "fill",
-                        "spacing": "0"
+                        "spacing": "0",
+                        "padding": "0"
                       },
                       "components": [
-                        {
-                          "type": "label",
-                          "style": {
-                            "size": "18",
-                            "color": "#FFF"
-                          },
-                          "text": "{{title}}"
-                        },
                         {
                           "type": "image",
                           "url": "{{image}}",
