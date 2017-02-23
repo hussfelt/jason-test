@@ -1,40 +1,16 @@
 {
   "$jason": {
     "head": {
-      "title": "All your recipes",
-      "description": "Sorted by title",
-      "actions": {
-        "$pull": {
-          "trigger": "fetch"
-        },
-        "$foreground": {
-          "trigger": "fetch"
-        },
-        "$show": {
-          "trigger": "fetch"
-        },
-        "$load": {
-          "trigger": "fetch"
-        },
-        "fetch": {
-          "type": "$network.request",
-          "options": {
-            "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/data/recipes.json"
-          },
-          "success": {
-            "type": "$render"
-          }
-        }
-      },
+      "title": "{{$params.title}}",
+      "description": "Recipe",
       "templates": {
         "body": {
           "style": {
             "background": "#ffffff",
-            "color": "#000000",
             "border": "none"
           },
           "header": {
-            "title": "Your recipes",
+            "title": "{{$params.title}}",
             "style": {
               "background": "#429e80",
               "font": "HelveticaNeue-Bold",
@@ -43,22 +19,11 @@
               "color": "#ffffff"
             }
           },
-          "sections": {
-            "{{#each $jason.recipes.sort(function(a,b){  return new Date(b.created_at) - new Date(a.created_at);}) }}": {
+          "sections": [
+            {
               "items": [
                 {
                   "type": "vertical",
-                  "action": {
-                    "type": "$href",
-                    "options": {
-                      "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/recipe.json",
-                      "options": {
-                        "id": "{{id}}",
-                        "title": "{{title}}"
-                        "title": "{{image}}"
-                      }
-                    }
-                  },
                   "style": {
                     "background": "#ffffff"
                   },
@@ -76,11 +41,11 @@
                             "size": "18",
                             "color": "#FFF"
                           },
-                          "text": "{{title}}"
+                          "text": "{{params.title}}"
                         },
                         {
                           "type": "image",
-                          "url": "{{image}}",
+                          "url": "{{params.image}}",
                           "style": {
                             "width": "100%",
                             "padding": "0"
@@ -91,8 +56,8 @@
                   ]
                 }
               ]
-            }
-          }
+            },
+          ]
         }
       }
     }
