@@ -54,8 +54,8 @@
                       "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/recipe.json",
                       "options": {
                         "id": "{{id}}",
-                        "title": "{{title}}"
-                        "title": "{{image}}"
+                        "title": "{{title}}",
+                        "image": "{{image}}"
                       }
                     }
                   },
