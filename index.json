@@ -43,24 +43,6 @@
               "color": "#ffffff"
             }
           },
-          "footer": {
-            "tabs": {
-              "style": {
-                "background": "#429e80",
-                "color": "#ffffff"
-              },
-              "items": [
-                {
-                  "image": "https://raw.githubusercontent.com/hussfelt/jason-test/icons/master/home-8x.png",
-                  "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/index.json"
-                },
-                {
-                  "image": "https://raw.githubusercontent.com/hussfelt/jason-test/icons/master/heart-8x.png",
-                  "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/favourites.json"
-                }
-              ]
-            }
-          },
           "sections": {
             "{{#each $jason.recipes.sort(function(a,b){  return new Date(b.created_at) - new Date(a.created_at);}) }}": {
               "items": [
@@ -71,7 +53,7 @@
                     "options": {
                       "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/recipe.json",
                       "options": {
-                        "id": "{{id.toString()}}",
+                        "id": "{{id}}",
                         "title": "{{title}}"
                       }
                     }
@@ -80,39 +62,6 @@
                     "background": "#ffffff"
                   },
                   "components": [
-                    {
-                      "type": "vertical",
-                      "components": [
-                        {
-                          "type": "horizontal",
-                          "style": {
-                            "distribution": "fill",
-                            "padding": "10",
-                            "spacing": "10"
-                          },
-                          "components": [
-                            {
-                              "type": "vertical",
-                              "style": {
-                                "distribution": "fill",
-                                "spacing": "5"
-                              },
-                              "components": [
-                                {
-                                  "type": "label",
-                                  "style": {
-                                    "size": "18",
-                                    "font": "AvenirNext-Heavy",
-                                    "color": "#cb4924"
-                                  },
-                                  "text": "{{title}}"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
                     {
                       "type": "image",
                       "url": "{{image}}",
