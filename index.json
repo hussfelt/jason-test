@@ -45,6 +45,17 @@
           },
           "sections": {
             "{{#each $jason.recipes.sort(function(a,b){  return new Date(b.created_at) - new Date(a.created_at);}) }}": {
+              "header": {
+                "type": "label",
+                "text": "{{title}}",
+                "style": {
+                  "background": "#429e80",
+                  "font": "HelveticaNeue-CondensedBold",
+                  "padding": "10",
+                  "color": "#ffffff",
+                  "size": "14"
+                }
+              },
               "items": [
                 {
                   "type": "vertical",
