@@ -1,7 +1,30 @@
 {
   "$jason": {
     "head": {
-      "title": "{{$params.title}}",
+      "title": "{{$jason.recipe.title}}",
+      "actions": {
+        "$pull": {
+          "trigger": "fetch"
+        },
+        "$foreground": {
+          "trigger": "fetch"
+        },
+        "$show": {
+          "trigger": "fetch"
+        },
+        "$load": {
+          "trigger": "fetch"
+        },
+        "fetch": {
+          "type": "$network.request",
+          "options": {
+            "url": "https://raw.githubusercontent.com/hussfelt/jason-test/master/data/recipes/{{$params.id}}.json"
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
       "description": "Recipe",
       "templates": {
         "body": {
@@ -10,7 +33,7 @@
             "border": "none"
           },
           "header": {
-            "title": "{{$params.title}}",
+            "title": "{{$jason.recipe.title}}",
             "style": {
               "background": "#429e80",
               "font": "HelveticaNeue-Bold",
@@ -37,7 +60,7 @@
                       "components": [
                         {
                           "type": "image",
-                          "url": "{{$params.image}}",
+                          "url": "{{$jason.recipe.image}}",
                           "style": {
                             "width": "100%",
                             "padding": "0"
