@@ -72,6 +72,31 @@
                 }
               ]
             },
+            {
+              "items": {
+                "{{#each $jason.recipe.steps}}": {
+                  "type": "vertical",
+                  "style": {
+                    "background": "#ffffff"
+                  },
+                  "components": [
+                    {
+                      "type": "vertical",
+                      "style": {
+                        "distribution": "fill",
+                        "spacing": "0"
+                      },
+                      "components": [
+                        {
+                          "type": "label",
+                          "text": "{{title}}",
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
           ]
         }
       }
