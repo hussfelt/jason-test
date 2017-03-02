@@ -1,7 +1,7 @@
 {
   "$jason": {
     "head": {
-      "title": "{{$jason.recipe.title}}",
+      "title": "{{$jason.recipe.title}} - test",
       "actions": {
         "$pull": {
           "trigger": "fetch"
