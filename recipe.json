@@ -33,7 +33,7 @@
             "border": "none"
           },
           "header": {
-            "title": "{{$jason.recipe.title}} - test",
+            "title": "{{$jason.recipe.title}}",
             "style": {
               "background": "#429e80",
               "font": "HelveticaNeue-Bold",
